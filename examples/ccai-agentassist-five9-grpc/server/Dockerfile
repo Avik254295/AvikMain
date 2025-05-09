@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /examples/ccai-agentassist-five9-grpc/server
 
 # Install Git
 RUN apt-get update && apt-get install -y git
