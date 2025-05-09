@@ -7,14 +7,11 @@ WORKDIR /app
 # Install Git
 RUN apt-get update && apt-get install -y git
 
-# Clone the repository from GitHub (Replace with your repo URL)
-RUN git clone https://github.com/Avik254295/AvikMain.git /app
-
-# Navigate to the cloned repo
-WORKDIR /app
+COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 
 # Expose the port Cloud Run will use
 ENV PORT=8080
